@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Menu Principal -->
+        <div id="menu-screen" class="screen">
+            <img src="assets/Img/MenuSnake.png" alt="Logo Snake" class="logo-img">
+            <button id="start-btn">Começar</button>
+            <button id="hardcore-btn">Modo Hardcore</button>
+        </div>
+
+        <!-- Menu Hardcore -->
+        <div id="hardcore-menu-screen" class="screen" style="display: none;">
+            <img src="assets//Img/MenuSnakeHardCore.png" alt="Logo Snake Hardcore" class="logo-img">
+            <button id="start-hardcore-btn">Começar (Hardcore)</button>
+            <button id="back-to-menu-btn">Voltar</button>
+        </div>
+
+        <!-- Tela de Game Over -->
+        <div id="game-over-screen" class="screen" style="display: none;">
+            <h1>Game Over</h1>
+            <p>Sua pontuação: <span id="final-score">0</span></p>
+            <button id="restart-btn">Começar de Novo</button>
+            <button id="game-over-to-menu-btn">Voltar ao Menu</button>
+        </div>
+
+        <!-- Jogo -->
+        <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+        <h2 id="score-display" style="display: none;">Pontuação: <span id="score">0</span></h2>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

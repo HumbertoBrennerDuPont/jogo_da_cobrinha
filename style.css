@@ -1,0 +1,120 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    position: relative;
+    width: 400px;
+    height: 460px; /* Altura para acomodar o placar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu-screen, #hardcore-menu-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9bbc0f; /* Verde Gameboy */
+    border: 2px solid #0f380f; /* Verde escuro */
+    box-sizing: border-box;
+}
+
+.logo-img {
+    width: 80%; /* Ajusta a largura da imagem */
+    max-width: 300px; /* Garante que a imagem não fique muito grande */
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #0f380f;
+    background-color: #8bac0f; /* Verde claro */
+    color: #0f380f; /* Verde escuro */
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0f380f;
+    color: #9bbc0f;
+}
+
+/* Estilos Hardcore */
+#hardcore-menu-screen {
+    background-color: #7D0000; /* Vermelho escuro */
+    border-color: #330000;
+}
+
+#hardcore-menu-screen button {
+    border-color: #330000;
+    background-color: #FF5733;
+    color: #330000;
+}
+
+#hardcore-menu-screen button:hover {
+    background-color: #330000;
+    color: #FF5733;
+}
+
+
+#game-over-screen {
+    display: none; /* Começa escondido */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px; /* Apenas a altura do canvas */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+}
+
+#game-over-screen h1 {
+    color: #FF4136; /* Vermelho */
+    font-size: 50px;
+    margin: 0;
+}
+
+#game-over-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#game-over-screen button {
+    background-color: #333;
+    border: 2px solid white;
+    color: white;
+}
+
+#game-over-screen button:hover {
+    background-color: white;
+    color: #333;
+}
+
+canvas {
+    background-color: #000000;
+    border: 2px solid #4CAF50;
+}
+
+#score-display {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
