@@ -2,7 +2,7 @@
 
 Um clone clássico do Jogo da Cobrinha (Snake) criado com HTML, CSS e JavaScript puro, com um toque moderno e funcionalidades extras.
 
-![Gameplay do Jogo da Cobrinha](https://via.placeholder.com/400x250.png?text=Adicione+um+GIF+do+jogo+aqui)
+![Gameplay do Jogo da Cobrinha](gameplay.gif)
 *(Sugestão: use uma ferramenta como [ScreenToGif](https://www.screentogif.com/) para gravar a jogabilidade e substituir o link acima.)*
 
 ---
