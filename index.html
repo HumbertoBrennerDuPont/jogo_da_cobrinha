@@ -12,6 +12,7 @@
         <div id="menu-screen" class="screen">
             <img src="assets/Img/MenuSnake.png" alt="Logo Snake" class="logo-img">
             <button id="start-btn">Começar</button>
+            <button id="manual-btn">Manual</button>
             <button id="hardcore-btn">Modo Hardcore</button>
         </div>
 
@@ -19,6 +20,7 @@
         <div id="hardcore-menu-screen" class="screen" style="display: none;">
             <img src="assets//Img/MenuSnakeHardCore.png" alt="Logo Snake Hardcore" class="logo-img">
             <button id="start-hardcore-btn">Começar (Hardcore)</button>
+            <button id="hardcore-manual-btn">Manual</button>
             <button id="back-to-menu-btn">Voltar</button>
         </div>
 
@@ -28,6 +30,22 @@
             <p>Sua pontuação: <span id="final-score">0</span></p>
             <button id="restart-btn">Começar de Novo</button>
             <button id="game-over-to-menu-btn">Voltar ao Menu</button>
+        </div>
+
+        <!-- Tela de Manual -->
+        <div id="manual-screen" class="screen" style="display: none;">
+            <h1>Manual</h1>
+            <img src="assets/Img/cobra_normal.png" alt="Cobra Normal" class="manual-img">
+            <p>Use as teclas de seta (↑, ↓, ←, →) ou as teclas W, A, S, D para mover a cobra. <br> Pegue as comidas para crescer e aumentar sua pontuação. <br> Não bata nas paredes nem em si mesmo!</p>
+            <button id="manual-to-menu-btn">Voltar</button>
+        </div>
+
+        <!-- Tela de Manual Hardcore -->
+        <div id="hardcore-manual-screen" class="screen" style="display: none;">
+            <h1>Manual Hardcore</h1>
+            <img src="assets/Img/cobra_hardcore.png" alt="Cobra Hardcore" class="manual-img">
+            <p>A velocidade é muito maior! <br> Use as teclas de seta (↑, ↓, ←, →) ou W, A, S, D para mover. <br> O objetivo é o mesmo, mas o desafio é brutal. Boa sorte!</p>
+            <button id="hardcore-manual-to-menu-btn">Voltar</button>
         </div>
 
         <!-- Jogo -->

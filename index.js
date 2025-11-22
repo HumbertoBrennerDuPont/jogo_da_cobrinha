@@ -9,6 +9,8 @@ const scoreDisplay = document.getElementById('score-display');
 const menuScreen = document.getElementById('menu-screen');
 const hardcoreMenuScreen = document.getElementById('hardcore-menu-screen');
 const gameOverScreen = document.getElementById('game-over-screen');
+const manualScreen = document.getElementById('manual-screen');
+const hardcoreManualScreen = document.getElementById('hardcore-manual-screen');
 
 // Botões
 const startBtn = document.getElementById('start-btn');
@@ -17,6 +19,10 @@ const startHardcoreBtn = document.getElementById('start-hardcore-btn');
 const backToMenuBtn = document.getElementById('back-to-menu-btn');
 const restartBtn = document.getElementById('restart-btn');
 const gameOverToMenuBtn = document.getElementById('game-over-to-menu-btn');
+const manualBtn = document.getElementById('manual-btn');
+const hardcoreManualBtn = document.getElementById('hardcore-manual-btn');
+const manualToMenuBtn = document.getElementById('manual-to-menu-btn');
+const hardcoreManualToMenuBtn = document.getElementById('hardcore-manual-to-menu-btn');
 
 // --- Áudio ---
 const menuMusic = new Audio('assets/music/menu_snake.mp3');
@@ -47,6 +53,8 @@ function showScreen(screenName) {
     menuScreen.style.display = 'none';
     hardcoreMenuScreen.style.display = 'none';
     gameOverScreen.style.display = 'none';
+    manualScreen.style.display = 'none';
+    hardcoreManualScreen.style.display = 'none';
     canvas.style.display = 'none';
     scoreDisplay.style.display = 'none';
 
@@ -59,6 +67,12 @@ function showScreen(screenName) {
         menuMusic.play().catch(e => console.log("A interação do usuário é necessária para tocar a música."));
     } else if (screenName === 'HARDCORE_MENU') {
         hardcoreMenuScreen.style.display = 'flex';
+        hardcoreMusic.play().catch(e => console.log("A interação do usuário é necessária para tocar a música."));
+    } else if (screenName === 'MANUAL') {
+        manualScreen.style.display = 'flex';
+        menuMusic.play().catch(e => console.log("A interação do usuário é necessária para tocar a música."));
+    } else if (screenName === 'HARDCORE_MANUAL') {
+        hardcoreManualScreen.style.display = 'flex';
         hardcoreMusic.play().catch(e => console.log("A interação do usuário é necessária para tocar a música."));
     } else if (screenName === 'GAME') {
         canvas.style.display = 'block';
@@ -225,19 +239,19 @@ function handleKeyPress(event) {
         const goingLeft = direction === 'left';
         const goingRight = direction === 'right';
 
-        if (event.key === 'ArrowUp' && !goingDown) {
+        if ((event.key === 'ArrowUp' || event.key.toLowerCase() === 'w') && !goingDown) {
             direction = 'up';
             changingDirection = true;
         }
-        if (event.key === 'ArrowDown' && !goingUp) {
+        if ((event.key === 'ArrowDown' || event.key.toLowerCase() === 's') && !goingUp) {
             direction = 'down';
             changingDirection = true;
         }
-        if (event.key === 'ArrowLeft' && !goingRight) {
+        if ((event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') && !goingRight) {
             direction = 'left';
             changingDirection = true;
         }
-        if (event.key === 'ArrowRight' && !goingLeft) {
+        if ((event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') && !goingLeft) {
             direction = 'right';
             changingDirection = true;
         }
@@ -252,6 +266,10 @@ startHardcoreBtn.addEventListener('click', () => startGame(true));
 backToMenuBtn.addEventListener('click', () => showScreen('MENU'));
 restartBtn.addEventListener('click', () => startGame(lastGameWasHardcore));
 gameOverToMenuBtn.addEventListener('click', () => showScreen('MENU'));
+manualBtn.addEventListener('click', () => showScreen('MANUAL'));
+hardcoreManualBtn.addEventListener('click', () => showScreen('HARDCORE_MANUAL'));
+manualToMenuBtn.addEventListener('click', () => showScreen('MENU'));
+hardcoreManualToMenuBtn.addEventListener('click', () => showScreen('HARDCORE_MENU'));
 
 
 document.addEventListener('keydown', handleKeyPress);

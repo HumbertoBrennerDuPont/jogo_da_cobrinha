@@ -37,6 +37,11 @@ body {
     margin-bottom: 20px;
 }
 
+.manual-img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
 button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
@@ -67,6 +72,70 @@ button:hover {
 }
 
 #hardcore-menu-screen button:hover {
+    background-color: #330000;
+    color: #FF5733;
+}
+
+#manual-screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9bbc0f; /* Verde Gameboy */
+    border: 2px solid #0f380f; /* Verde escuro */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#manual-screen h1 {
+    color: #0f380f;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#manual-screen p {
+    color: #0f380f;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 20px 20px 20px;
+}
+
+/* Estilos do Manual Hardcore */
+#hardcore-manual-screen {
+    background-color: #7D0000; /* Vermelho escuro */
+    border-color: #330000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#hardcore-manual-screen h1 {
+    color: #FF5733;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#hardcore-manual-screen p {
+    color: #FFC300;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 20px 20px 20px;
+}
+
+#hardcore-manual-screen button {
+    border-color: #330000;
+    background-color: #FF5733;
+    color: #330000;
+}
+
+#hardcore-manual-screen button:hover {
     background-color: #330000;
     color: #FF5733;
 }
