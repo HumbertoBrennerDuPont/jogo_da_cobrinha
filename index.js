@@ -29,6 +29,7 @@ const menuMusic = new Audio('assets/music/menu_snake.mp3');
 menuMusic.loop = true;
 const hardcoreMusic = new Audio('assets/music/hardcore_menu.mp3');
 hardcoreMusic.loop = true;
+const gameOverMusic = new Audio('assets/music/game over.mp3');
 
 // --- Configurações do Jogo ---
 const gridSize = 20;
@@ -46,6 +47,8 @@ function stopAllMusic() {
     menuMusic.currentTime = 0;
     hardcoreMusic.pause();
     hardcoreMusic.currentTime = 0;
+    gameOverMusic.pause();
+    gameOverMusic.currentTime = 0;
 }
 
 function showScreen(screenName) {
@@ -81,6 +84,7 @@ function showScreen(screenName) {
         finalScoreElement.textContent = score;
         gameOverScreen.style.display = 'flex';
         canvas.style.display = 'block'; // Mostra o canvas por baixo
+        gameOverMusic.play().catch(e => console.log("A interação do usuário é necessária para tocar a música."));
     }
 }
 
@@ -109,11 +113,6 @@ function startGame(isHardcore = false) {
 // --- Loop Principal do Jogo ---
 
 function main() {
-    if (gameState === 'GAME_OVER') {
-        showScreen('GAME_OVER');
-        return; // Para o loop
-    }
-
     if (gameState === 'PAUSED') {
         // Para o loop se o jogo estiver pausado
         return;
@@ -206,11 +205,13 @@ function checkCollision() {
 
     if (head.x < 0 || head.x >= canvasSize || head.y < 0 || head.y >= canvasSize) {
         gameState = 'GAME_OVER';
+        showScreen('GAME_OVER');
     }
 
     for (let i = 4; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
             gameState = 'GAME_OVER';
+            showScreen('GAME_OVER');
         }
     }
 }
